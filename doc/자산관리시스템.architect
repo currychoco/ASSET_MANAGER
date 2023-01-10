@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<architect-project version="1.0" appversion="1.0.9">
+ <project-name>자산관리시스템</project-name>
+ <print-settings numCopies="1" zoom="1.0" pageNumbersPrinted="true" orientation="1" paperWidth="612.0" paperHeight="792.0" leftBorder="50.0" rightBorder="50.0" topBorder="50.0" bottomBorder="50.0" />
+ <project-data-sources>
+  <data-source id="DS0">
+   <property key="Logical" value="PlayPen Database" />
+  </data-source>
+ </project-data-sources>
+ <source-databases>
+ </source-databases>
+ <target-database id="ppdb" dbcs-ref="DS0">
+  <table id="TAB1" populated="true" UUID="1494ca79-e420-40be-ac7d-27b474a063e1" name="현물 자산 테이블" objectType="TABLE" physicalName="asset" >
+   <remarks></remarks>
+   <folder id="FOLTAB11" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL2" populated="true" UUID="0a42b99f-b23f-4603-84b3-c74142ae1d78" autoIncrement="true" autoIncrementSequenceName="asset_company_serialnum_seq" defaultValue="" name="자산 번호" nullable="0" physicalName="company_serialnum" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL3" populated="true" UUID="120518e7-aa7b-437f-8fb1-1c9eb0c4d00a" autoIncrement="false" autoIncrementSequenceName="asset_serialnumber_seq" defaultValue="" name="시리얼넘버" nullable="0" physicalName="serialnumber" precision="255" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL4" populated="true" UUID="b6a9f9a0-a50e-4280-917e-a8a833814527" autoIncrement="false" autoIncrementSequenceName="asset_asset_state_seq" defaultValue="" name="자산 상태" nullable="0" physicalName="asset_state" precision="255" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL5" populated="true" UUID="a4b16cbf-7f98-4480-ad2c-4033d5fee6b3" autoIncrement="false" autoIncrementSequenceName="asset_reg_date_seq" defaultValue="" name="등록일" nullable="0" physicalName="reg_date" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+     <remarks></remarks>
+    </column>
+    <column id="COL6" populated="true" UUID="ac17c866-41f7-4a41-b22e-c2bef7b4164a" autoIncrement="false" autoIncrementSequenceName="asset_model_seq" defaultValue="" name="모델" nullable="0" physicalName="model" precision="255" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL7" populated="true" UUID="e189fc0d-d1c8-4f28-b231-1164fd275258" autoIncrement="false" autoIncrementSequenceName="asset_category_category_code_seq" defaultValue="" name="카테고리 고유 코드" nullable="0" physicalName="category_code" precision="255" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB13" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB12" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB14" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX8" populated="true" UUID="1ec70a83-45ac-4692-857c-45ff6aad6a7a" clustered="false" name="asset_pk" physicalName="asset_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC9" populated="true" UUID="884fe17c-7d4d-4565-859d-11ccd850140d" ascendingOrDescending="UNSPECIFIED" column-ref="COL2" name="자산 번호" physicalName="company_serialnum" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB10" populated="true" UUID="e111992a-9b1f-4397-9c5f-9e475a55ffa4" name="자산 카테고리" objectType="TABLE" physicalName="asset_category" >
+   <remarks></remarks>
+   <folder id="FOLTAB101" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL11" populated="true" UUID="3d1c9ed6-da32-4311-bcb1-b63c584fb206" autoIncrement="false" autoIncrementSequenceName="asset_category_category_code_seq" defaultValue="" name="카테고리 고유 코드" nullable="0" physicalName="category_code" precision="255" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL12" populated="true" UUID="b056faac-e850-4a16-a08b-26cde67e88d0" autoIncrement="false" autoIncrementSequenceName="asset_category_category_name_seq" defaultValue="" name="카테고리 이름" nullable="0" physicalName="category_name" precision="255" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB103" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB102" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB104" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX13" populated="true" UUID="6583bcc2-ae70-4be3-94a3-97e0b8e26c00" clustered="false" name="asset_category_pk" physicalName="asset_category_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC14" populated="true" UUID="0499d810-7aa1-4419-96bc-8a088f14cc02" ascendingOrDescending="UNSPECIFIED" column-ref="COL11" name="카테고리 고유 코드" physicalName="category_code" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB15" populated="true" UUID="aa080efb-3df2-4717-9b45-b3a76975b9cb" name="자산 신청" objectType="TABLE" physicalName="asset_request" >
+   <remarks></remarks>
+   <folder id="FOLTAB151" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL16" populated="true" UUID="a43ad22f-b13d-489b-96d3-f80b3c9112ad" autoIncrement="false" autoIncrementSequenceName="asset_request_payment_state_code_seq" defaultValue="" name="자산 지급 seq " nullable="0" physicalName="payment_state_code" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL17" populated="true" UUID="7fe22ea3-0a4f-496c-ade5-79cfb3f2f354" autoIncrement="false" autoIncrementSequenceName="asset_request_emp_no_seq" defaultValue="" name="사번" nullable="0" physicalName="emp_no" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL18" populated="true" UUID="4f89903a-66b7-4902-b0d4-ae18e6c7ea5c" autoIncrement="false" autoIncrementSequenceName="asset_request_request_type_seq" defaultValue="" name="신청 타입" nullable="0" physicalName="request_type" precision="255" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL19" populated="true" UUID="f99f632e-5aee-463e-bef9-f27793a5fa4b" autoIncrement="false" autoIncrementSequenceName="asset_request_request_date_seq" defaultValue="" name="신청일" nullable="0" physicalName="request_date" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+     <remarks></remarks>
+    </column>
+    <column id="COL20" populated="true" UUID="99af58cf-4d85-4d00-90b9-7c81f1358f49" autoIncrement="false" autoIncrementSequenceName="asset_request_approval_seq" defaultValue="" name="승인상태" nullable="0" physicalName="approval" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="16" userDefinedTypeUUID="a26374aa-3026-4bb8-b564-eb2e186dfa5d" >
+     <remarks></remarks>
+    </column>
+    <column id="COL21" populated="true" UUID="314e9a6f-f7de-42b5-84c9-94bc365c31e6" autoIncrement="false" autoIncrementSequenceName="asset_request_approval_date_seq" defaultValue="" name="승인일" nullable="1" physicalName="approval_date" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+     <remarks></remarks>
+    </column>
+    <column id="COL22" populated="true" UUID="a1f327a2-c54c-4a53-818b-57ffbff0e91f" autoIncrement="false" autoIncrementSequenceName="asset_request_title_seq" defaultValue="" name="제목" nullable="0" physicalName="title" precision="255" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL23" populated="true" UUID="92cf4ce4-44ac-4814-98fa-fa910f683488" autoIncrement="false" autoIncrementSequenceName="asset_request_content_seq" defaultValue="" name="내용" nullable="0" physicalName="content" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="2005" userDefinedTypeUUID="9c22ed40-2868-4d9e-96ca-789234a53c8f" >
+     <remarks></remarks>
+    </column>
+    <column id="COL24" populated="true" UUID="4dc2edf6-016c-4356-aabb-f85fda666db9" autoIncrement="false" autoIncrementSequenceName="asset_request_address1_seq" defaultValue="" name="주소1" nullable="0" physicalName="address1" precision="255" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL25" populated="true" UUID="ceeacd26-c461-4787-9d72-0f6afd2e102a" autoIncrement="false" autoIncrementSequenceName="asset_request_address2_seq" defaultValue="" name="주소2" nullable="0" physicalName="address2" precision="255" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL26" populated="true" UUID="9177d673-a84d-4f85-8b7e-5aca86c0b30d" autoIncrement="false" autoIncrementSequenceName="asset_request_request_cancel_seq" defaultValue="" name="취소신청" nullable="0" physicalName="request_cancel" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="16" userDefinedTypeUUID="a26374aa-3026-4bb8-b564-eb2e186dfa5d" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB153" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB152" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB154" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX27" populated="true" UUID="db102085-e2fa-42d4-9538-7953aed50db6" clustered="false" name="asset_request_pk" physicalName="payment_state_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC28" populated="true" UUID="3d4576a7-a8f3-49f8-bb0c-abb867ba2502" ascendingOrDescending="UNSPECIFIED" column-ref="COL16" name="자산 지급 seq " physicalName="payment_state_code" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB29" populated="true" UUID="00ed9e89-4be0-44d0-86fd-dc8db9eb055f" name="사원정보" objectType="TABLE" physicalName="employee" >
+   <remarks></remarks>
+   <folder id="FOLTAB291" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL30" populated="true" UUID="cb71d377-3b13-411d-94b4-0fcd54dc7a6f" autoIncrement="false" autoIncrementSequenceName="employee_emp_no_seq" defaultValue="" name="사번" nullable="0" physicalName="emp_no" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL31" populated="true" UUID="5079fb38-66bf-47cd-8d6b-1708a0598c07" autoIncrement="false" autoIncrementSequenceName="employee_dept_code_seq" defaultValue="" name="부서코드" nullable="0" physicalName="dept_code" precision="255" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL32" populated="true" UUID="118e56be-baa0-4056-82a5-6903811850e2" autoIncrement="false" autoIncrementSequenceName="employee_position_code_seq" defaultValue="" name="직급코드" nullable="0" physicalName="position_code" precision="255" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL33" populated="true" UUID="1fe0c4ae-3155-4fc4-9b81-e0e019a20f15" autoIncrement="false" autoIncrementSequenceName="job_job_code_seq" defaultValue="" name="직책코드" nullable="0" physicalName="job_code" precision="255" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL34" populated="true" UUID="e6e36eb4-1d96-4d04-ae49-90385476c53a" autoIncrement="false" autoIncrementSequenceName="employee_emp_name_seq" defaultValue="" name="이름" nullable="0" physicalName="emp_name" precision="255" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL35" populated="true" UUID="e7154fb3-4979-4ee0-91fc-20042b937a98" autoIncrement="false" autoIncrementSequenceName="employee_emp_name_en_seq" defaultValue="" name="영문명" nullable="0" physicalName="emp_name_en" precision="255" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL36" populated="true" UUID="14e484f0-cdca-4d40-bf51-653fc47146e2" autoIncrement="false" autoIncrementSequenceName="employee_gender_seq" defaultValue="" name="성별" nullable="0" physicalName="gender" precision="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+     <remarks></remarks>
+    </column>
+    <column id="COL37" populated="true" UUID="7f0d6ac0-cf55-4778-aa17-7f1b4244a7cf" autoIncrement="false" autoIncrementSequenceName="employee_email_seq" defaultValue="" name="이메일" nullable="0" physicalName="email" precision="255" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL38" populated="true" UUID="c79461f3-9c7e-4186-8836-5874424a5d2b" autoIncrement="false" autoIncrementSequenceName="employee_phone_seq" defaultValue="" name="휴대폰" nullable="0" physicalName="phone" precision="255" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL39" populated="true" UUID="aba1b04f-39a2-4d11-b501-eea8bd72ee3f" autoIncrement="false" autoIncrementSequenceName="employee_address1_seq" defaultValue="" name="주소1" nullable="0" physicalName="address1" precision="255" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL40" populated="true" UUID="e7eac99b-e088-472e-9335-0a6db253b6f2" autoIncrement="false" autoIncrementSequenceName="employee_address2_seq" defaultValue="" name="주소2" nullable="0" physicalName="address2" precision="255" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL41" populated="true" UUID="95ad22a0-dae5-45d1-8500-a0043b9535d3" autoIncrement="false" autoIncrementSequenceName="employee_zip_code_seq" defaultValue="" name="우편번호" nullable="0" physicalName="zip_code" precision="25" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL42" populated="true" UUID="816f9d53-dbde-4b8f-9dc3-22bd9ed9ad10" autoIncrement="false" autoIncrementSequenceName="employee_start_date_seq" defaultValue="" name="입사일" nullable="0" physicalName="start_date" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+     <remarks></remarks>
+    </column>
+    <column id="COL43" populated="true" UUID="765944df-e980-455a-89e0-e02a31421e3d" autoIncrement="false" autoIncrementSequenceName="employee_emp_id_seq" defaultValue="" name="사원아이디" nullable="0" physicalName="emp_id" precision="255" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB293" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB292" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB294" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX44" populated="true" UUID="87f7b4d8-715d-48dc-809e-6924e611aa8a" clustered="false" name="employee_pk" physicalName="employee_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC45" populated="true" UUID="45150f39-8e88-4b28-919c-51479c91cfaa" ascendingOrDescending="UNSPECIFIED" column-ref="COL30" name="사번" physicalName="emp_no" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB46" populated="true" UUID="21d199bc-0cdc-4077-94b2-101915ff1f62" name="부서" objectType="TABLE" physicalName="department" >
+   <remarks></remarks>
+   <folder id="FOLTAB461" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL47" populated="true" UUID="9720f452-6f85-4cb7-b023-e81bcb2da9c5" autoIncrement="false" autoIncrementSequenceName="department_dept_code_seq" defaultValue="" name="부서코드" nullable="0" physicalName="dept_code" precision="255" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL48" populated="true" UUID="d816e71d-8886-4a0c-a21f-b1c11092333f" autoIncrement="false" autoIncrementSequenceName="department_upper_dept_code_seq" defaultValue="" name="상위 부서 코드" nullable="1" physicalName="upper_dept_code" precision="255" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL49" populated="true" UUID="0509b24a-4bff-49a6-bf29-b743821a56a5" autoIncrement="false" autoIncrementSequenceName="department_head_emp_no_seq" defaultValue="" name="부서장 사번" nullable="1" physicalName="head_emp_no" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL50" populated="true" UUID="0a3c9df2-cd6f-43e9-a6c6-ef955baec31f" autoIncrement="false" autoIncrementSequenceName="department_dept_name_seq" defaultValue="" name="부서명" nullable="0" physicalName="dept_name" precision="255" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL51" populated="true" UUID="ffcf135b-9d92-4d05-a9a4-fb2cd8c1b4d4" autoIncrement="false" autoIncrementSequenceName="department_dept_name_en_seq" defaultValue="" name="부서영문명" nullable="0" physicalName="dept_name_en" precision="255" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL52" populated="true" UUID="f0e22e15-2360-42cd-a82c-a9eec8cc2772" autoIncrement="false" autoIncrementSequenceName="department_dept_level_seq" defaultValue="" name="부서레벨" nullable="0" physicalName="dept_level" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB463" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB462" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB464" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX53" populated="true" UUID="8f1917cc-c887-4925-ba99-9ea7305f1602" clustered="false" name="department_pk" physicalName="department_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC54" populated="true" UUID="788b9eeb-02c2-4e49-9e7b-bea21941a667" ascendingOrDescending="UNSPECIFIED" column-ref="COL47" name="부서코드" physicalName="dept_code" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB55" populated="true" UUID="ff596480-61c3-4bf2-b377-4a73fd35ac7a" name="직책" objectType="TABLE" physicalName="job" >
+   <remarks></remarks>
+   <folder id="FOLTAB551" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL56" populated="true" UUID="91ecf32b-b8d3-4cda-93eb-eabe43dbfe3f" autoIncrement="false" autoIncrementSequenceName="job_job_code_seq" defaultValue="" name="직책코드" nullable="0" physicalName="job_code" precision="255" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL57" populated="true" UUID="269b89c3-28ab-4014-8d06-f0de3177e8e7" autoIncrement="false" autoIncrementSequenceName="job_job_name_seq" defaultValue="" name="직책명" nullable="0" physicalName="job_name" precision="255" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL58" populated="true" UUID="e9bbf1b9-a479-48b2-b4ac-883defcc8e3c" autoIncrement="false" autoIncrementSequenceName="job_job_name_en_seq" defaultValue="" name="직책영문명" nullable="0" physicalName="job_name_en" precision="255" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL59" populated="true" UUID="14c0daf1-e9c6-44da-9a3a-d574dd746a9b" autoIncrement="false" autoIncrementSequenceName="job_job_level_seq" defaultValue="" name="직책레벨" nullable="0" physicalName="job_level" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB553" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB552" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB554" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX60" populated="true" UUID="9238df7e-3635-4849-8d63-c69bb3c2db51" clustered="false" name="job_pk" physicalName="job_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC61" populated="true" UUID="a1a400e1-495f-42cb-a8d3-61bba99b09ac" ascendingOrDescending="UNSPECIFIED" column-ref="COL56" name="직책코드" physicalName="job_code" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB62" populated="true" UUID="d8966246-861e-43a2-a8c5-504ee1190fa9" name="직급" objectType="TABLE" physicalName="position" >
+   <remarks></remarks>
+   <folder id="FOLTAB621" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL63" populated="true" UUID="f4e21ff8-dba3-42a6-80a3-63a086e88573" autoIncrement="false" autoIncrementSequenceName="position_position_code_seq" defaultValue="" name="직급코드" nullable="0" physicalName="position_code" precision="255" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL64" populated="true" UUID="58a21e4c-3b1c-45a9-b4dc-9fb963e65f64" autoIncrement="false" autoIncrementSequenceName="position_position_name_seq" defaultValue="" name="직급명" nullable="0" physicalName="position_name" precision="255" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL65" populated="true" UUID="4884ca98-cbdf-43d2-8f5e-a5c471cbd21d" autoIncrement="false" autoIncrementSequenceName="position_position_name_en_seq" defaultValue="" name="직급영문명" nullable="0" physicalName="position_name_en" precision="255" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL66" populated="true" UUID="19027f75-1e7a-449d-ace3-f75ba963c8e9" autoIncrement="false" autoIncrementSequenceName="position_position_level_seq" defaultValue="" name="직급레벨" nullable="0" physicalName="position_level" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB623" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB622" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB624" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX67" populated="true" UUID="010f818d-4b23-4c9a-ab3d-fb41dea6f56b" clustered="false" name="positio_pk" physicalName="positio_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC68" populated="true" UUID="01188661-4259-4d7c-b046-a6047e0743ea" ascendingOrDescending="UNSPECIFIED" column-ref="COL63" name="직급코드" physicalName="position_code" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB69" populated="true" UUID="2edfdeeb-31b6-41f0-b703-77c7597b0bdc" name="권한" objectType="TABLE" physicalName="authority" >
+   <remarks></remarks>
+   <folder id="FOLTAB691" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL70" populated="true" UUID="acc043ab-7bbd-47e8-b5af-280e49797cfe" autoIncrement="false" autoIncrementSequenceName="authority_authority_seq" defaultValue="" name="권한코드" nullable="0" physicalName="authority" precision="255" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL71" populated="true" UUID="1fa6ed5f-38fb-4a38-aaf2-356ffc44fbe5" autoIncrement="false" autoIncrementSequenceName="authority_auth_name_seq" defaultValue="" name="권한명" nullable="0" physicalName="auth_name" precision="255" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB693" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB692" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB694" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX72" populated="true" UUID="68bc2ebc-2b2b-403a-951a-1414229262b8" clustered="false" name="authority_pk" physicalName="authority_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC73" populated="true" UUID="8c46d764-4c8b-48ad-818c-17e8ef0e32c1" ascendingOrDescending="UNSPECIFIED" column-ref="COL70" name="권한코드" physicalName="authority" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB74" populated="true" UUID="f2fb0273-7c55-45eb-b301-1a36970a2855" name="권한부여계정" objectType="TABLE" physicalName="account_authority" >
+   <remarks></remarks>
+   <folder id="FOLTAB741" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL75" populated="true" UUID="2ac5848d-2738-4538-a73f-ae4c83f05230" autoIncrement="true" autoIncrementSequenceName="account_authority_auth_no_seq" defaultValue="" name="고유번호" nullable="0" physicalName="auth_no" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL76" populated="true" UUID="c2889715-17ff-4d2b-9af8-ff0b009b19dd" autoIncrement="false" autoIncrementSequenceName="account_authority_emp_no_seq" defaultValue="" name="사번" nullable="0" physicalName="emp_no" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL77" populated="true" UUID="d13493e1-9903-42a2-ab20-6b3b76aa2951" autoIncrement="false" autoIncrementSequenceName="account_authority_auth_code_seq" defaultValue="" name="권한코드" nullable="0" physicalName="auth_code" precision="255" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB743" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB742" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB744" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX78" populated="true" UUID="3b94d7a2-4d22-44fd-8675-9ba67d2f6e18" clustered="false" name="account_authority_pk" physicalName="account_authority_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC79" populated="true" UUID="656d3074-391d-4a1b-99fa-42b878279763" ascendingOrDescending="UNSPECIFIED" column-ref="COL75" name="고유번호" physicalName="auth_no" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB80" populated="true" UUID="0098bac6-1440-4f8c-a03f-3cd2dda9572d" name="지급" objectType="TABLE" physicalName="payment" >
+   <remarks></remarks>
+   <folder id="FOLTAB801" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL81" populated="true" UUID="0e98ae48-8b34-4527-9946-d2270dcbd46f" autoIncrement="true" autoIncrementSequenceName="payment_id_seq" defaultValue="" name="지급 seq" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL82" populated="true" UUID="7cf1b378-a029-45e9-a475-682b2e431eed" autoIncrement="false" autoIncrementSequenceName="payment_emp_no_seq" defaultValue="" name="사번" nullable="0" physicalName="emp_no" precision="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL83" populated="true" UUID="85a9aca1-652d-4dcf-a2b6-5b519e2bfc8e" autoIncrement="false" autoIncrementSequenceName="payment_type_seq" defaultValue="" name="구분" nullable="0" physicalName="type" precision="255" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL84" populated="true" UUID="19d17460-4851-4e30-997d-9aab0298d83e" autoIncrement="false" autoIncrementSequenceName="payment_approval_date_seq" defaultValue="" name="승인시간" nullable="0" physicalName="approval_date" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB803" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB802" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB804" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX85" populated="true" UUID="4686a404-2ac0-4b12-a20b-f8eaa6b9b8fd" clustered="false" name="payment_pk" physicalName="payment_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC86" populated="true" UUID="25c998f8-d2fc-4086-b489-9380161b4f31" ascendingOrDescending="UNSPECIFIED" column-ref="COL81" name="지급 seq" physicalName="id" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB87" populated="true" UUID="7093e919-0597-484c-8428-f0fd6dda7683" name="지급물품" objectType="TABLE" physicalName="payment_asset" >
+   <remarks></remarks>
+   <folder id="FOLTAB871" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL88" populated="true" UUID="e5fabd57-fece-448f-8fcf-4ca8cebd7db9" autoIncrement="true" autoIncrementSequenceName="payment_asset_payment_asset_id_seq" defaultValue="" name="지급물품seq" nullable="0" physicalName="payment_asset_id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL89" populated="true" UUID="28c6162f-5864-48c2-90b6-b994151034ad" autoIncrement="false" autoIncrementSequenceName="asset_company_serialnum_seq" defaultValue="" name="자산 번호" nullable="0" physicalName="company_serialnum" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL90" populated="true" UUID="1d8451ef-03ed-4cba-a5a3-ee5c6f9db235" autoIncrement="false" autoIncrementSequenceName="payment_id_seq" defaultValue="" name="지급 seq" nullable="0" physicalName="id" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB873" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB872" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB874" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX91" populated="true" UUID="e477aa94-fa67-4dd9-98d4-e2e24ba7c501" clustered="false" name="payment_asset_pk" physicalName="payment_asset_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC92" populated="true" UUID="9a202f3e-bcd1-48ff-8427-f201b71cab7c" ascendingOrDescending="UNSPECIFIED" column-ref="COL88" name="지급물품seq" physicalName="payment_asset_id" />
+    </index>
+   </folder>
+  </table>
+  <relationships>
+   <relationship id="REL93" populated="true" UUID="2a31d2c8-9103-4399-8a93-6eaa131e79f9" deferrability="7" deleteRule="3" fk-table-ref="TAB87" fkCardinality="7" identifying="false" name="asset_payment_asset_fk" physicalName="asset_payment_asset_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP94" populated="true" UUID="2995b0df-b032-45f7-b26f-7539668eb99a" fk-column-ref="COL89" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   </relationship>
+   <relationship id="REL95" populated="true" UUID="803c23a5-e7d0-4c4c-a217-9f61dd8a63dc" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="false" name="asset_category_asset_fk" physicalName="asset_category_asset_fk" pk-table-ref="TAB10" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP96" populated="true" UUID="8e36bccc-96c3-4818-b33e-595f5c1e0857" fk-column-ref="COL7" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL11" />
+   </relationship>
+   <relationship id="REL97" populated="true" UUID="879d43e1-569d-469c-968f-b41808bda1e2" deferrability="7" deleteRule="3" fk-table-ref="TAB80" fkCardinality="7" identifying="false" name="employee_payment_fk" physicalName="employee_payment_fk" pk-table-ref="TAB29" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP98" populated="true" UUID="ea75d809-d7ae-4f7a-b22f-ef5670d52aac" fk-column-ref="COL82" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL30" />
+   </relationship>
+   <relationship id="REL99" populated="true" UUID="287b163a-2426-4357-b342-aa7d9b7dde3d" deferrability="7" deleteRule="3" fk-table-ref="TAB29" fkCardinality="7" identifying="false" name="department_employee_fk" physicalName="department_employee_fk" pk-table-ref="TAB46" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP100" populated="true" UUID="c9a68b11-f603-449a-ae0f-69b386864b74" fk-column-ref="COL31" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL47" />
+   </relationship>
+   <relationship id="REL101" populated="true" UUID="f43c22c0-a68f-45f5-bb11-416732b6e786" deferrability="7" deleteRule="3" fk-table-ref="TAB29" fkCardinality="7" identifying="false" name="job_employee_fk" physicalName="job_employee_fk" pk-table-ref="TAB55" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP102" populated="true" UUID="015ad755-18d8-4ca5-bdef-d7b9c89a9ba0" fk-column-ref="COL33" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL56" />
+   </relationship>
+   <relationship id="REL103" populated="true" UUID="c6231634-b5d5-4d72-b781-ce19f1a39ee8" deferrability="7" deleteRule="3" fk-table-ref="TAB29" fkCardinality="7" identifying="false" name="position_employee_fk" physicalName="position_employee_fk" pk-table-ref="TAB62" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP104" populated="true" UUID="09ae8c58-162a-4b75-a938-528bea427292" fk-column-ref="COL32" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL63" />
+   </relationship>
+   <relationship id="REL105" populated="true" UUID="9b9a9381-666e-4311-9023-4402f43354de" deferrability="7" deleteRule="3" fk-table-ref="TAB74" fkCardinality="7" identifying="false" name="authority_account_authority_fk" physicalName="authority_account_authority_fk" pk-table-ref="TAB69" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP106" populated="true" UUID="f6665859-3f05-4703-b7f4-644f393ffd98" fk-column-ref="COL77" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL70" />
+   </relationship>
+   <relationship id="REL107" populated="true" UUID="8f9c04fa-a665-4e95-8f64-d631600fde6e" deferrability="7" deleteRule="3" fk-table-ref="TAB87" fkCardinality="7" identifying="false" name="payment_payment_asset_fk" physicalName="payment_payment_asset_fk" pk-table-ref="TAB80" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP108" populated="true" UUID="c0969cf3-d9ae-4c81-ac64-f18c79d0c123" fk-column-ref="COL90" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL81" />
+   </relationship>
+  </relationships>
+ </target-database>
+ <ddl-generator type="ca.sqlpower.architect.ddl.GenericDDLGenerator" allow-connection="true"> </ddl-generator>
+ <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
+ <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
+ <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+  <table-pane table-ref="TAB1" x="391" y="317" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB10" x="828" y="315" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB15" x="26" y="241" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB29" x="432" y="708" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB46" x="64" y="694" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB55" x="76" y="865" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB62" x="762" y="876" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB69" x="738" y="645" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB74" x="748" y="739" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB80" x="212" y="533" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB87" x="596" y="538" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-link relationship-ref="REL95" pkConnection="0.5" fkConnection="0.9166666666666666" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL99" pkConnection="0.25" fkConnection="0.21777777777777776" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL105" pkConnection="0.6755725190839694" fkConnection="0.367816091954023" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL103" pkConnection="0.1111111111111111" fkConnection="0.30952380952380953" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL101" pkConnection="0.26666666666666666" fkConnection="0.36" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL107" pkConnection="0.4533333333333333" fkConnection="0.5555555555555556" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL93" pkConnection="0.6624605678233438" fkConnection="0.3907563025210084" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL97" pkConnection="0.07662835249042145" fkConnection="0.645021645021645" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+ </play-pen>
+ <critic-manager>
+  <critic-grouping platformType="Generic" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PrimaryKeyCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.RelationshipMappingTypeCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.EmptyRelationshipCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericSequenceNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetDefaultOnColumnWithNoDefaultCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetNullOnNonNullableColumnCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DuplicateNameCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="DB2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DB2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="H2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.H2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="HSQLDB" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.HSQLDBUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="MySQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLCommentCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="Oracle" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OraclePhysicalNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="PostgreSQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PostgreSQLReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerUnsupportedFeaturesCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2000" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2000UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2005" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2005UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+ </critic-manager>
+ <profiles topNCount="10">
+  </profiles>
+  <olap>
+  </olap>
+  <olap-gui>
+  </olap-gui>
+</architect-project>
