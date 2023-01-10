@@ -17,7 +17,6 @@ import java.util.Date;
 @ToString
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "emp_no")
     private Long empNo;
     @Column(name = "dept_code")

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: currychoco
@@ -8,9 +9,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <c:import url="/WEB-INF/views/layout/head.jsp"/>
 </head>
 <body>
-호옴~
+<c:import url="/WEB-INF/views/header.jsp"/>
+
+<div class="container body-container">
+    호옴~
+</div>
+
+<c:import url="/WEB-INF/views/footer.jsp"/>
 </body>
 </html>
