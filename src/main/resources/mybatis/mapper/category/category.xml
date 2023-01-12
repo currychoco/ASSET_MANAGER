@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="category">
+
+    <insert id="save" parameterType="site.currychoco.assetmanager.category.domain.Category">
+        insert into asset_category(
+            category_code,
+            category_name
+        )
+        values(
+            #{categoryCode},
+            #{categoryName}
+        )
+    </insert>
+
+    <select id="findAll" resultType="site.currychoco.assetmanager.category.domain.Category">
+        select category_code, category_name from asset_category
+    </select>
+</mapper>

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
-import site.currychoco.assetmanager.category.domain.CategoryDto;
+import site.currychoco.assetmanager.category.domain.Category;
 import site.currychoco.assetmanager.category.service.CategoryService;
 
 @RequiredArgsConstructor
@@ -26,7 +26,7 @@ public class CategoryController {
     // ---
     @ResponseBody
     @PostMapping("/category")
-    public void addCategory(@RequestBody CategoryDto categoryDto){
-        categoryService.createCategory(categoryDto);
+    public void addCategory(@RequestBody Category category){
+        categoryService.createCategory(category);
     }
 }

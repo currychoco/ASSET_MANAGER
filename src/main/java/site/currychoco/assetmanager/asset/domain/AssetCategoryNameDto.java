@@ -1,20 +1,22 @@
 package site.currychoco.assetmanager.asset.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
 import java.sql.Timestamp;
 
-@Getter
-@ToString
+@NoArgsConstructor
 @AllArgsConstructor
-public class Asset {
+@Getter
+@Setter
+@ToString
+public class AssetCategoryNameDto {
 
     private Long id;
     private String serialnumber;
-    private String assetState = AssetState.AVAILABLE.name();
+    private String assetState;
     private Timestamp regDate;
     private String model;
     private String categoryCode;
+    private String categoryName;
+
 }
