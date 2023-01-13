@@ -32,10 +32,11 @@
                 <thead>
                 <tr>
                     <th>고유번호</th>
+                    <th>시리얼번호</th>
+                    <th>자산 상태</th>
+                    <th>등록일</th>
+                    <th>모델</th>
                     <th>카테고리</th>
-                    <th>성별</th>
-                    <th>부서</th>
-                    <th>직책</th>
                 </tr>
                 </thead>
                 <tbody id="assetList">

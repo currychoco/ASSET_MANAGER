@@ -34,4 +34,5 @@
             on ac.category_code = a.category_code
         order by a.reg_date desc
     </select>
+
 </mapper>
