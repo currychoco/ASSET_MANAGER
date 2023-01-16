@@ -35,16 +35,27 @@ public class AssetController {
         return "manager/asset/addAsset";
     }
 
+    @GetMapping("manager/asset/list")
+    public String getAssetList(){
+        return "manager/asset/listAsset";
+    }
+
     // ---
     // api
     // ---
 
+    /**
+     * 자산 추가
+     */
     @ResponseBody
     @PostMapping("/asset")
     public void addAsset(@RequestBody Asset asset){
         assetService.addAsset(asset);
     }
 
+    /**
+     * 카테고리명 포함 현물 자산 리스트
+     */
     @ResponseBody
     @GetMapping("/asset")
     public List<AssetCategoryNameDto> getAllAsset(){

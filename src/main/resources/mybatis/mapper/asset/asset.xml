@@ -22,13 +22,13 @@
 
     <select id="findAll" resultType="site.currychoco.assetmanager.asset.domain.AssetCategoryNameDto">
         select
-            a.id,
-            a.serialnumber,
-            a.asset_state,
-            a.reg_date,
-            a.model,
-            a.category_code,
-            ac.category_name
+            a.id as id,
+            a.serialnumber as serialnumber,
+            a.asset_state as assetState,
+            a.reg_date as regDate,
+            a.model as model,
+            a.category_code as categoryCode,
+            ac.category_name as categoryName
         from asset a
         inner join asset_category ac
             on ac.category_code = a.category_code

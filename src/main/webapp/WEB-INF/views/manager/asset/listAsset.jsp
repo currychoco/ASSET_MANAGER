@@ -5,7 +5,42 @@
     <c:import url="/WEB-INF/views/layout/head.jsp"/>
 
     <script>
+        function getAssetList(){
+            $.ajax({
+                url : "/asset",
+                type : "GET",
+                contentType : "application/json",
+            }).done(function (response){
+                const list = response;
+                console.log(list);
+                let htmlText = "";
+                if(response.length === 0){
+                    htmlText = `<tr><td colspan="5" class="text-center">검색된 자산이 없습니다.</td></tr>`;
+                }else{
+                    list.forEach(e=>{
+                        htmlText += `
+                            <tr>
+                                <td><a href="">\${e.id}</a></td>
+                                <td>\${e.categoryName}</td>
+                                <td>\${e.model}</td>
+                                <td>\${e.assetState}</td>
+                                <td>\${e.regDate}</td>
+                            </tr>
+                        `
+                    })
+                }
 
+                $('#assetList').html(htmlText);
+
+            }).fail(function(err){
+                console.log("error : " + err);
+            });
+        }
+
+
+        $(document).ready(function (){
+            getAssetList();
+        });
     </script>
 </head>
 <body>
@@ -15,36 +50,19 @@
     <form class="container body-container" id="addForm">
         <h3 class="title">자산 리스트</h3>
         <div class="form-group">
-            <input type="text" class="form-control" id="serialnumber" name="serialnumber" placeholder="시리얼넘버" required>
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" id="model" name="model" placeholder="모델명" required>
-        </div>
-        <div class="form-group">
             <table class="table table-hover">
-                <colgroup>
-                    <col style="width:10%" />
-                    <col style="width:20%" />
-                    <col style="width:10%" />
-                    <col style="width:40%" />
-                    <col style="width:20%" />
-                </colgroup>
                 <thead>
                 <tr>
                     <th>고유번호</th>
-                    <th>시리얼번호</th>
+                    <th>카테고리</th>
+                    <th>모델</th>
                     <th>자산 상태</th>
                     <th>등록일</th>
-                    <th>모델</th>
-                    <th>카테고리</th>
                 </tr>
                 </thead>
                 <tbody id="assetList">
                 </tbody>
             </table>
-        </div>
-        <div class="form-group">
-            <button type="submit" class="btn btn-lg btn-primary btn-block">자산 추가</button>
         </div>
     </form>
 </div>
