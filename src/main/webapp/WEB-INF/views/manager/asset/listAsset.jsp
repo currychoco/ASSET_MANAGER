@@ -20,7 +20,7 @@
                     list.forEach(e=>{
                         htmlText += `
                             <tr>
-                                <td><a href="">\${e.id}</a></td>
+                                <td><a href="/manager/asset/detail?id=\${e.id}">\${e.id}</a></td>
                                 <td>\${e.categoryName}</td>
                                 <td>\${e.model}</td>
                                 <td>\${e.assetState}</td>

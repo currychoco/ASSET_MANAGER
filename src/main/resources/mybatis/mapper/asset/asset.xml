@@ -35,4 +35,33 @@
         order by a.reg_date desc
     </select>
 
+    <select id="findAssetById"  parameterType="Long" resultType="site.currychoco.assetmanager.asset.domain.AssetCategoryNameDto">
+        select
+            a.id as id,
+            a.serialnumber as serialnumber,
+            a.asset_state as assetState,
+            a.reg_date as regDate,
+            a.model as model,
+            a.category_code as categoryCode,
+            ac.category_name as categoryName
+        from asset a
+         inner join asset_category ac
+            on ac.category_code = a.category_code
+        where a.id = #{id}
+        order by a.reg_date desc
+    </select>
+
+    <update id="update" parameterType="site.currychoco.assetmanager.asset.domain.Asset">
+        update asset
+        set
+            serialnumber = #{serialnumber},
+            asset_state = #{assetState},
+            model = #{model},
+            category_code = #{categoryCode}
+        where id = #{id};
+    </update>
+
+    <delete id="delete" parameterType="Long">
+        delete from asset where id = #{id}
+    </delete>
 </mapper>

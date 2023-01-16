@@ -29,4 +29,25 @@ public class AssetService {
         return assetRepository.findAll();
     }
 
+    /**
+     * id를 통한 자산 호출
+     */
+    public AssetCategoryNameDto getAssetById(Long id){
+        return assetRepository.findAssetById(id);
+    }
+
+    /**
+     * 자산 수정
+     */
+    public void updateAsset(Asset asset){
+        assetRepository.update(asset);
+    }
+
+    /**
+     * 자산 삭제
+     */
+    public void deleteAsset(Long id){
+        assetRepository.delete(id);
+    }
+
 }

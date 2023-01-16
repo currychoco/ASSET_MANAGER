@@ -21,4 +21,16 @@ public class AssetRepository {
     public List<AssetCategoryNameDto> findAll(){
         return sqlSessionTemplate.selectList("asset.findAll");
     }
+
+    public AssetCategoryNameDto findAssetById(Long id){
+        return sqlSessionTemplate.selectOne("asset.findAssetById", id);
+    }
+
+    public void update(Asset asset){
+        sqlSessionTemplate.update("asset.update", asset);
+    }
+
+    public void delete(Long id){
+        sqlSessionTemplate.delete("asset.delete", id);
+    }
 }
