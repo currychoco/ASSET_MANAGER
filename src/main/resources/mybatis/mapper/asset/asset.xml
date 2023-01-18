@@ -35,7 +35,7 @@
         order by a.reg_date desc
     </select>
 
-    <select id="findAssetById"  parameterType="Long" resultType="site.currychoco.assetmanager.asset.domain.AssetCategoryNameDto">
+    <select id="findById"  parameterType="Long" resultType="site.currychoco.assetmanager.asset.domain.AssetCategoryNameDto">
         select
             a.id as id,
             a.serialnumber as serialnumber,
@@ -64,4 +64,17 @@
     <delete id="delete" parameterType="Long">
         delete from asset where id = #{id}
     </delete>
+
+    <select id="findAllForExcel" resultType="site.currychoco.assetmanager.asset.domain.AssetExcelOutputDto">
+        select
+            a.id as id,
+            a.serialnumber as serialnumber,
+            a.asset_state as assetState,
+            a.reg_date as regDate,
+            a.model as model,
+            ac.category_name as categoryName
+        from asset a
+            inner join asset_category ac
+                on a.category_code = ac.category_code;
+    </select>
 </mapper>

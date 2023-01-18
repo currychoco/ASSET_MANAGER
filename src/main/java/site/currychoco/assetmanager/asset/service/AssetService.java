@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import site.currychoco.assetmanager.asset.domain.Asset;
 import site.currychoco.assetmanager.asset.domain.AssetCategoryNameDto;
+import site.currychoco.assetmanager.asset.domain.AssetExcelOutputDto;
 import site.currychoco.assetmanager.asset.repository.AssetRepository;
 
 import java.util.ArrayList;
@@ -50,4 +51,10 @@ public class AssetService {
         assetRepository.delete(id);
     }
 
+    /**
+     * 엑셀 추출용 자산 리스트
+     */
+    public List<AssetExcelOutputDto> getAllAssetForExcel(){
+        return assetRepository.findAllForExcel();
+    }
 }

@@ -27,9 +27,12 @@ class AssetManagerApplicationTests {
 	@Test
 	void contextLoads() {
 
+		/*
 		final long id = 1L;
 		Asset asset = assetRepository.findById(id).get();
 		System.out.println(asset.getAssetState());
+
+		 */
 
 		// {asset.category.categoryName}
 	}

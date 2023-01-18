@@ -1,17 +1,21 @@
 package site.currychoco.assetmanager.asset.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.apache.poi.util.IOUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import site.currychoco.assetmanager.asset.domain.Asset;
-import site.currychoco.assetmanager.asset.domain.AssetCategoryNameDto;
-import site.currychoco.assetmanager.asset.domain.AssetState;
-import site.currychoco.assetmanager.asset.domain.AssetStateDto;
+import site.currychoco.assetmanager.asset.domain.*;
 import site.currychoco.assetmanager.asset.service.AssetService;
 import site.currychoco.assetmanager.category.domain.Category;
 import site.currychoco.assetmanager.category.service.CategoryService;
+import site.currychoco.assetmanager.util.excel.ExcelUtils;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -101,5 +105,21 @@ public class AssetController {
     @DeleteMapping("/asset/{id}")
     public void deleteAsset(@PathVariable(name = "id") long id){
         assetService.deleteAsset(id);
+    }
+
+    /**
+     * 자산 리스트 엑셀 다운로드
+     */
+    @ResponseBody
+    @GetMapping("/asset/excel")
+    public void excelDownload(HttpServletResponse response) throws IOException{
+        response.setHeader("Content-Disposition", "attachment;filename=asset_list.xls");
+        response.setContentType("application/vnd.ms-excel");
+
+        List<String> header = Arrays.asList("고유번호", "시리얼넘버", "자산 상태", "등록일", "모델명", "카테고리");
+        List<AssetExcelOutputDto> assetList = assetService.getAllAssetForExcel();
+
+        ByteArrayInputStream stream = ExcelUtils.createListToExcel(header, assetList);
+        IOUtils.copy(stream, response.getOutputStream());
     }
 }

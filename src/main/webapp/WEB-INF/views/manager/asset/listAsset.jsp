@@ -5,6 +5,7 @@
     <c:import url="/WEB-INF/views/layout/head.jsp"/>
 
     <script>
+
         function getAssetList(){
             $.ajax({
                 url : "/asset",
@@ -12,7 +13,6 @@
                 contentType : "application/json",
             }).done(function (response){
                 const list = response;
-                console.log(list);
                 let htmlText = "";
                 if(response.length === 0){
                     htmlText = `<tr><td colspan="5" class="text-center">검색된 자산이 없습니다.</td></tr>`;
@@ -46,8 +46,8 @@
 <body>
 <c:import url="/WEB-INF/views/header.jsp"/>
 
-<div>
-    <form class="container body-container" id="addForm">
+<div class="container body-container">
+    <form id="addForm">
         <h3 class="title">자산 리스트</h3>
         <div class="form-group">
             <table class="table table-hover">
@@ -65,6 +65,9 @@
             </table>
         </div>
     </form>
+    <div>
+        <button class="btn btn-primary" onclick="location.href='http://localhost:8081/asset/excel'">리스트 다운로드</button>
+    </div>
 </div>
 
 <c:import url="/WEB-INF/views/footer.jsp"/>

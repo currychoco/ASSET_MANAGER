@@ -5,6 +5,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 import site.currychoco.assetmanager.asset.domain.Asset;
 import site.currychoco.assetmanager.asset.domain.AssetCategoryNameDto;
+import site.currychoco.assetmanager.asset.domain.AssetExcelOutputDto;
 
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class AssetRepository {
     }
 
     public AssetCategoryNameDto findAssetById(Long id){
-        return sqlSessionTemplate.selectOne("asset.findAssetById", id);
+        return sqlSessionTemplate.selectOne("asset.findById", id);
     }
 
     public void update(Asset asset){
@@ -33,4 +34,6 @@ public class AssetRepository {
     public void delete(Long id){
         sqlSessionTemplate.delete("asset.delete", id);
     }
+
+    public List<AssetExcelOutputDto> findAllForExcel() { return sqlSessionTemplate.selectList("asset.findAllForExcel"); }
 }
