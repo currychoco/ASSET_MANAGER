@@ -66,7 +66,7 @@
         </div>
     </form>
     <div>
-        <button class="btn btn-primary" onclick="location.href='http://localhost:8081/asset/excel'">리스트 다운로드</button>
+        <button class="btn btn-primary" onclick="location.href='http://localhost:8081/asset/excel'">자산 리스트 다운로드</button>
     </div>
 </div>
 
