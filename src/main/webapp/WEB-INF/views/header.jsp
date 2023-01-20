@@ -21,6 +21,11 @@
                     <img src="/favicon.png" width="50" height="50" />
                 </a>
             </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/manager/asset/list">자산 리스트</a></li>
+                <li><a href="/manager/asset/create">자산 추가</a></li>
+                <li><a href="/manager/category/create">카테고리 생성</a></li>
+            </ul>
         </div>
     </nav>
 
