@@ -20,7 +20,6 @@
                     list.forEach(e=>{
                         htmlText += `
                             <tr>
-                                <td><a href="/manager/category/detail?id=\${e.id}">\${e.id}</a></td>
                                 <td>\${e.categoryCode}</td>
                                 <td>\${e.categoryName}</td>
                             </tr>
@@ -28,7 +27,7 @@
                     })
                 }
 
-                $('#assetList').html(htmlText);
+                $('#categoryList').html(htmlText);
 
             }).fail(function(err){
                 console.log("error : " + err);

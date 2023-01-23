@@ -24,6 +24,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="/manager/asset/list">자산 리스트</a></li>
                 <li><a href="/manager/asset/create">자산 추가</a></li>
+                <li><a href="/manager/category/list">카테고리 리스트</a></li>
                 <li><a href="/manager/category/create">카테고리 생성</a></li>
             </ul>
         </div>
