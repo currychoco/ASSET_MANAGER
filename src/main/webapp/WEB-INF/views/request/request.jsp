@@ -8,7 +8,7 @@
 <c:import url="/WEB-INF/views/header.jsp"/>
 
 <div class="container body-container">
-  신청페이지
+  신청페이지 수정
 </div>
 
 <c:import url="/WEB-INF/views/footer.jsp"/>
