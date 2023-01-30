@@ -5,6 +5,8 @@ import org.apache.poi.util.IOUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import site.currychoco.assetmanager.asset.domain.*;
 import site.currychoco.assetmanager.asset.service.AssetService;
 import site.currychoco.assetmanager.category.domain.Category;
@@ -15,9 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -38,6 +38,11 @@ public class AssetController {
         model.addAttribute("category", categoryDtoList);
 
         return "manager/asset/addAsset";
+    }
+
+    @GetMapping("/manager/asset/upload")
+    public String addAssetByFile(){
+        return "manager/asset/uploadAsset";
     }
 
     @GetMapping("manager/asset/list")
@@ -122,4 +127,16 @@ public class AssetController {
         ByteArrayInputStream stream = ExcelUtils.createListToExcel(header, assetList);
         IOUtils.copy(stream, response.getOutputStream());
     }
+
+    /**
+     * 자산 엑셀 파일 업로드
+     */
+    @ResponseBody
+    @PostMapping("/asset/upload")
+    public void excelUpload2(@RequestPart(name = "file") MultipartFile mf) {
+        List<Asset> assetList = new ArrayList<>();
+
+        List<Map<String, Objects>> mapList;
+    }
+
 }

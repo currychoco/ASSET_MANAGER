@@ -44,9 +44,9 @@
 <body>
 <c:import url="/WEB-INF/views/header.jsp"/>
 
-<div>
-  <form class="container body-container" id="addForm">
-    <h3 class="title">자산 추가</h3>
+<div class="container body-container">
+  <h3 class="title">자산 추가(입력)</h3>
+  <form id="addForm">
     <div class="form-group">
       <input type="text" class="form-control" id="serialnumber" name="serialnumber" placeholder="시리얼넘버" required>
     </div>
