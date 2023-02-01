@@ -41,6 +41,7 @@
 
     <div class="pull-right">
       <input type="submit" value="엑셀파일 업로드" class="btn btn btn-primary btn-lg" />
+      <button class="btn btn-primary" onclick="location.href='http://localhost:8081/asset/excel'">양식 리스트 다운로드</button>
     </div>
   </form>
 </div>
