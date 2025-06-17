@@ -1,0 +1,15 @@
+server:
+  port: 8082
+
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:file:./h2/asset_manager;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;IFEXISTS=FALSE
+    jdbc-url: jdbc:h2:file:./h2/asset_manager;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;IFEXISTS=FALSE
+    username: test
+    password: 1234
+
+
+hr-manager:
+  url: http://hrmanager.currychoco.site
+  key: de585859-4425-4898-9cfe-5b743d5cbda9
