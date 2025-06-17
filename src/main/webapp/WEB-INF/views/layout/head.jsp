@@ -8,7 +8,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <!-- // bootstrap -->
 <!-- custom lib -->
-<!--<script src="/js/logout.js"></script>-->
+<script src="/js/logout.js"></script>
 <!-- // custom lib -->
 
 <!-- favicon image -->
