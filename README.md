@@ -12,7 +12,7 @@
 ## Docker 환경 구성
 아래 Container Registry 를 참고하여 테스트
 
-### V_HERE 서비스
+### ASSET_MANAGER 서비스
 - https://github.com/users/currychoco/packages/container/package/asset-manager
 ``` bash
 docker pull ghcr.io/currychoco/asset-manager:latest
