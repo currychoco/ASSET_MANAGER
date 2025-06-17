@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>site.currychoco</groupId>
-	<artifactId>ASSET_MANAGER</artifactId>
+	<artifactId>asset_manager</artifactId>
 	<version>1.0.0</version>
 	<packaging>war</packaging>
-	<name>ASSET_MANAGER</name>
+	<name>asset_manager</name>
 	<description>ASSET_MANAGER</description>
 	<properties>
 		<java.version>21</java.version>
