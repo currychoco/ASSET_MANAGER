@@ -3,12 +3,16 @@ package site.currychoco.assetmanager.util.excel;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.usermodel.*;
-import site.currychoco.assetmanager.asset.domain.AssetCategoryNameDto;
+import org.springframework.web.multipart.MultipartFile;
+import site.currychoco.assetmanager.asset.domain.Asset;
 import site.currychoco.assetmanager.asset.domain.AssetExcelOutputDto;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class ExcelUtils {
@@ -64,6 +68,55 @@ public class ExcelUtils {
         } catch (IOException e){
             e.printStackTrace();
             return null;
+        }
+    }
+
+    public static List<Asset> parseAssetExcelInput(MultipartFile file) {
+        List<Asset> result = new ArrayList<>();
+
+        try (InputStream inputStream = file.getInputStream();
+             Workbook workbook = new HSSFWorkbook(inputStream)) {
+
+            Sheet sheet = workbook.getSheetAt(0);
+            Iterator<Row> rowIterator = sheet.iterator();
+
+            // 헤더 스킵
+            if (rowIterator.hasNext()) {
+                rowIterator.next();
+            }
+
+            while (rowIterator.hasNext()) {
+                Row row = rowIterator.next();
+                Asset asset = new Asset(
+                        getCellValue(row.getCell(0)),
+                        getCellValue(row.getCell(1)),
+                        getCellValue(row.getCell(2)),
+                        getCellValue(row.getCell(3)));
+
+                result.add(asset);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace(); // 실제 서비스에서는 로그 처리 권장
+        }
+
+        return result;
+    }
+
+    private static String getCellValue(Cell cell) {
+        if (cell == null) return "";
+
+        switch (cell.getCellTypeEnum()) {
+            case STRING:
+                return cell.getStringCellValue().trim();
+            case NUMERIC:
+                return String.valueOf((int) cell.getNumericCellValue()); // 정수로 가정
+            case BOOLEAN:
+                return Boolean.toString(cell.getBooleanCellValue());
+            case FORMULA:
+                return cell.getCellFormula();
+            default:
+                return "";
         }
     }
 

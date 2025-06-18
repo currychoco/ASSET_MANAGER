@@ -19,6 +19,10 @@ public class AssetRepository {
         sqlSessionTemplate.insert("asset.save", asset);
     }
 
+    public List<AssetCategoryNameDto> findRentedAllByEmpNo(Long empNo){
+        return sqlSessionTemplate.selectList("asset.findRentedAllByEmpNo", empNo);
+    }
+
     public List<AssetCategoryNameDto> findAll(){
         return sqlSessionTemplate.selectList("asset.findAll");
     }

@@ -40,6 +40,7 @@
       </table>
 
     <div class="pull-right">
+      <a href="/files/asset_upload_sample.xls" download><button type="button" class="btn btn btn-lg">업로드 샘플 다운로드</button></a>
       <input type="submit" value="엑셀파일 업로드" class="btn btn btn-primary btn-lg" />
     </div>
   </form>

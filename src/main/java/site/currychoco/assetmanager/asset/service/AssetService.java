@@ -2,12 +2,14 @@ package site.currychoco.assetmanager.asset.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 import site.currychoco.assetmanager.asset.domain.Asset;
 import site.currychoco.assetmanager.asset.domain.AssetCategoryNameDto;
 import site.currychoco.assetmanager.asset.domain.AssetExcelOutputDto;
 import site.currychoco.assetmanager.asset.repository.AssetRepository;
+import site.currychoco.assetmanager.util.excel.ExcelUtils;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -19,8 +21,16 @@ public class AssetService {
     /**
      * 자산 생성
      */
+    @Transactional
     public void addAsset(Asset asset){
         assetRepository.save(asset);
+    }
+
+    /**
+     * 내 자산 조회
+     */
+    public List<AssetCategoryNameDto> getMyAssets(Long empNo){
+        return assetRepository.findRentedAllByEmpNo(empNo);
     }
 
     /**
@@ -40,6 +50,7 @@ public class AssetService {
     /**
      * 자산 수정
      */
+    @Transactional
     public void updateAsset(Asset asset){
         assetRepository.update(asset);
     }
@@ -47,6 +58,7 @@ public class AssetService {
     /**
      * 자산 삭제
      */
+    @Transactional
     public void deleteAsset(Long id){
         assetRepository.delete(id);
     }
@@ -56,5 +68,10 @@ public class AssetService {
      */
     public List<AssetExcelOutputDto> getAllAssetForExcel(){
         return assetRepository.findAllForExcel();
+    }
+
+    @Transactional
+    public void addAssetsByExcel(MultipartFile mf) {
+        ExcelUtils.parseAssetExcelInput(mf).forEach(this::addAsset);
     }
 }

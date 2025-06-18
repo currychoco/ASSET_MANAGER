@@ -22,8 +22,8 @@
                 </a>
             </div>
             <ul class="nav navbar-nav">
-                <li><a href="/">내 정보</a></li>
-                <li><a href="/request">자산 구매 요청</a></li>
+                <li><a href="/">내 자산</a></li>
+                <li><a href="/request/payment-request">자산 지급 요청</a></li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
                         관리자 페이지<span class="caret"></span>

@@ -20,6 +20,27 @@
         )
     </insert>
 
+    <select id="findRentedAllByEmpNo" parameterType="Long" resultType="site.currychoco.assetmanager.asset.domain.AssetCategoryNameDto">
+        select
+            a.id as id,
+            a.serialnumber as serialnumber,
+            a.asset_state as assetState,
+            a.reg_date as regDate,
+            a.model as model,
+            a.category_code as categoryCode,
+            ac.category_name as categoryName
+        from asset a
+            inner join asset_category ac
+            on ac.category_code = a.category_code
+            inner join payment_asset pa
+            on pa.asset_id = a.id
+            inner join payment p
+            on p.id = pa.payment_id
+        where p.emp_no = #{empNo}
+            and p.type = 'RENTED'
+        order by a.reg_date desc
+    </select>
+
     <select id="findAll" resultType="site.currychoco.assetmanager.asset.domain.AssetCategoryNameDto">
         select
             a.id as id,
@@ -35,7 +56,7 @@
         order by a.reg_date desc
     </select>
 
-    <select id="findById"  parameterType="Long" resultType="site.currychoco.assetmanager.asset.domain.AssetCategoryNameDto">
+    <select id="findById" parameterType="Long" resultType="site.currychoco.assetmanager.asset.domain.AssetCategoryNameDto">
         select
             a.id as id,
             a.serialnumber as serialnumber,

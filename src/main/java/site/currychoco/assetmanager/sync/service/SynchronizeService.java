@@ -44,7 +44,7 @@ public class SynchronizeService {
     @Value("${hr-manager.key}")
     private String hrManagerKey;
 
-    @Scheduled(cron = "0 0 0/1 1/1 * ?")
+    @Scheduled(cron = "0 0 5 * * *")
     public void synchronizeHR(){
         deleteAllEmployee();
         deleteAllDepartment();

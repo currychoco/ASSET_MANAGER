@@ -2,6 +2,7 @@ package site.currychoco.assetmanager.asset.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.apache.poi.util.IOUtils;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -67,6 +68,12 @@ public class AssetController {
     // api
     // ---
 
+    @ResponseBody
+    @GetMapping("/my-asset")
+    public List<AssetCategoryNameDto> getMyAssets(){
+        return assetService.getAllAsset();
+    }
+
     /**
      * 자산 추가
      */
@@ -131,12 +138,9 @@ public class AssetController {
     /**
      * 자산 엑셀 파일 업로드
      */
-    @ResponseBody
     @PostMapping("/asset/upload")
-    public void excelUpload2(@RequestPart(name = "file") MultipartFile mf) {
-        List<Asset> assetList = new ArrayList<>();
-
-        List<Map<String, Objects>> mapList;
+    public String excelUpload(@RequestPart(name = "file") MultipartFile mf) {
+        assetService.addAssetsByExcel(mf);
+        return "redirect:/manager/asset/upload";
     }
-
 }
