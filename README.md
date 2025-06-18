@@ -16,7 +16,7 @@
 - https://github.com/users/currychoco/packages/container/package/asset-manager
 ``` bash
 docker pull ghcr.io/currychoco/asset-manager:latest
-docker run --platform=linux/amd64 -p 8080:8080 ghcr.io/currychoco/asset-manager:latest
+docker run --platform=linux/amd64 -p 8081:8081 ghcr.io/currychoco/asset-manager:latest
 ```
 
 ## 계정 동기화
